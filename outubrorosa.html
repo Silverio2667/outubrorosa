@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outubro Rosa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffcccb; /* Fundo rosa claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        header {
+            background-color: #ff69b4; /* Rosa choque */
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+        main {
+            padding: 2rem;
+            width: 100%;
+            max-width: 600px;
+        }
+        h2 {
+            color: #ff69b4; /* Rosa choque */
+        }
+        .accordion {
+            background-color: white;
+            color: #444;
+            cursor: pointer;
+            padding: 1rem;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2rem;
+            transition: 0.4s;
+            margin-bottom: 1.5rem; /* Aumenta o espaçamento entre os botões */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: bold; /* Letras das perguntas em negrito */
+        }
+        .active, .accordion:hover {
+            background-color: #ddd;
+        }
+        .panel {
+            padding: 1rem;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            border-radius: 0 0 5px 5px;
+            color: #ff69b4; /* Respostas em rosa choque */
+        }
+        .video-container {
+            margin-top: 2rem;
+            text-align: center;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .video-container h3 {
+            color: #ff69b4; /* Rosa choque */
+            margin-bottom: 1rem;
+        }
+        iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OUTUBRO ROSA</h1>
+        <h2>MÊS DE PREVENÇÃO AO CÂNCER DE MAMA</h2>
+    </header>
+    <main>
+        <button class="accordion">O que é o Outubro Rosa?</button>
+        <div class="panel">
+            <p>É o mês que alerta sobre a prevenção e o diagnóstico precoce do câncer de mama.</p>
+        </div>
+
+        <button class="accordion">Números do Câncer de Mama</button>
+        <div class="panel">
+            <p>Estima-se que no Brasil, 66,280 casos de novos casos de câncer de mama em 2021, com um risco estimado de 61,61 casos a cada 100 mil mulheres.</p>
+        </div>
+
+        <button class="accordion">O que causa o Câncer de Mama?</button>
+        <div class="panel">
+            <p>Obesidade e sobrepeso após a menopausa; Sedentarismo; consumo de bebida alcoólica, Exposição frequente a radiação ionizantes (Raio-X).</p>
+        </div>
+
+        <div class="video-container">
+            <h3>APRENDA A SE PREVENIR</h3>
+            <iframe src="https://www.youtube.com/embed/BCptskEYIR8" allowfullscreen></iframe>
+        </div>
+    </main>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
